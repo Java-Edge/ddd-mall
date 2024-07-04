@@ -1,4 +1,4 @@
-## CMall-Front
+## DDD-Mall-Front
 
 ### 基于 Vue 开发的 CMall 商城前台页面
 
@@ -29,7 +29,3 @@
 ### 技术疑问交流
 
 - [添加交流群](https://magestack.cn/preparation/group.html)
-
-### 开源协议
-
-- 请遵循原作者 MIT 开源协议

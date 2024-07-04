@@ -2,7 +2,7 @@
   "name": "congomall-front",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "二次开发: 马丁, 原作者: Exrick <1012139570@qq.com>",
+  "author": "二次开发:  JavaEdge, 原作者: Exrick <1012139570@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

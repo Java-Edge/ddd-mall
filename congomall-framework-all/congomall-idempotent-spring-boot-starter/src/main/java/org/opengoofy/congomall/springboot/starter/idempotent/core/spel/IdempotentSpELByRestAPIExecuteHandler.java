@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.springboot.starter.idempotent.core.spel;
 
 import lombok.RequiredArgsConstructor;

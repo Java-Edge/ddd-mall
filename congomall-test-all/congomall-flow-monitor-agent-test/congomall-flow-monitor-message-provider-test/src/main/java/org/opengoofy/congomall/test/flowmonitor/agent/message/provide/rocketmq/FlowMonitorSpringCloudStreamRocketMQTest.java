@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.test.flowmonitor.agent.message.provide.rocketmq;
 
 import com.alibaba.nacos.common.utils.ThreadUtils;

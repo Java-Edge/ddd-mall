@@ -7,12 +7,8 @@ import org.opengoofy.congomall.springboot.starter.idempotent.core.spel.Idempoten
 import org.opengoofy.congomall.springboot.starter.idempotent.core.token.IdempotentTokenService;
 import org.opengoofy.congomall.springboot.starter.idempotent.enums.IdempotentSceneEnum;
 import org.opengoofy.congomall.springboot.starter.idempotent.enums.IdempotentTypeEnum;
-
 /**
  * 幂等执行处理器工厂
- * <p>
- * Q：为啥采用简单工厂模式？策略模式不行？
- * A：策略模式同可。但从设计模式语义来说，简单工厂模式更合适
  *
  * @author JavaEdge
  * @github <a href="https://github.com/Java-Edge" />

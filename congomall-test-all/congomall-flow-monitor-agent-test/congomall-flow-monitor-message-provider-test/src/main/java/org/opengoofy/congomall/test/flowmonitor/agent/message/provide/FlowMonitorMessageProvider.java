@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.test.flowmonitor.agent.message.provide;
 
 import org.springframework.boot.SpringApplication;

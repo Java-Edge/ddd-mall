@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.message.infrastructure.mq.produce;
 
 import cn.hutool.core.date.SystemClock;

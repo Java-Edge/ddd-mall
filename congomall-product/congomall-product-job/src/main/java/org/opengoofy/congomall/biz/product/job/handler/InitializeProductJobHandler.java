@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.product.job.handler;
 
 import com.alibaba.fastjson.JSON;

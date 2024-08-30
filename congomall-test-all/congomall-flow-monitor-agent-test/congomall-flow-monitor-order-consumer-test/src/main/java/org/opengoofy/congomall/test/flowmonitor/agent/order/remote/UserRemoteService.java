@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.test.flowmonitor.agent.order.remote;
 
 import org.springframework.cloud.openfeign.FeignClient;

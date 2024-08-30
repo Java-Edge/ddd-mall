@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.customer.user.domain.toolkit;
 
 import org.opengoofy.congomall.biz.customer.user.domain.aggregate.CustomerUser;

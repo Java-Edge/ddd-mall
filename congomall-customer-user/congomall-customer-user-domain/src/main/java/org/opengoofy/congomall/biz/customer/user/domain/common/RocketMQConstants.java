@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.customer.user.domain.common;
 
 /**

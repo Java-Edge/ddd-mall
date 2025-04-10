@@ -21,7 +21,7 @@ import java.util.List;
 @ApiModel("邮箱发送")
 public class MailSendCommand {
     
-    @ApiModelProperty(value = "标题", example = "刚果商城邮箱验证码提醒")
+    @ApiModelProperty(value = "标题", example = "DDD商城邮箱验证码提醒")
     @NotBlank(message = "邮箱标题不能为空")
     private String title;
     

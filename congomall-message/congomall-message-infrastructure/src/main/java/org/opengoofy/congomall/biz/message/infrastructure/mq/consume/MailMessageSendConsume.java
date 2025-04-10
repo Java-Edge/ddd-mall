@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.message.infrastructure.mq.consume;
 
 import cn.hutool.core.bean.BeanUtil;

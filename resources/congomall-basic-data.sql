@@ -1,3 +1,5 @@
+use congomall_basic_data;
+
 CREATE TABLE `region_info`
 (
     `id`          bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

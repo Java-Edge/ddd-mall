@@ -1,3 +1,4 @@
+use `congomall-order`;
 CREATE TABLE `order_info_0`
 (
     `id`                  bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

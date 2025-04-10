@@ -59,7 +59,8 @@ public class CartItemRepositoryImpl implements CartItemRepository {
     
     @Override
     public List<CartItem> querySelectCartByCustomerUserId(String customerUserId) {
-        LambdaQueryWrapper<CartItemDO> queryWrapper = Wrappers.lambdaQuery(CartItemDO.class).eq(CartItemDO::getCustomerUserId, customerUserId)
+        LambdaQueryWrapper<CartItemDO> queryWrapper = Wrappers.lambdaQuery(CartItemDO.class)
+                .eq(CartItemDO::getCustomerUserId, customerUserId)
                 .eq(CartItemDO::getSelectFlag, SelectFlagEnum.SELECTED.getCode());
         List<CartItemDO> selectList = cartItemMapper.selectList(queryWrapper);
         return BeanUtil.convert(selectList, CartItem.class);

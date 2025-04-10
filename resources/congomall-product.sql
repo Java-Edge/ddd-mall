@@ -1,3 +1,5 @@
+use congomall_product;
+
 CREATE TABLE `product_attribute`
 (
     `id`                            bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

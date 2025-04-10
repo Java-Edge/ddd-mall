@@ -54,7 +54,7 @@ public abstract class AbstractMailVerifySender {
         // 模板方法模式: 验证码放入缓存，并设置超时时间
         distributedCache.put(CacheUtil.buildKey(getCachePrefixKey(), requestParam.getReceiver()), verifyCode, REGISTER_USER_VERIFY_CODE_TIMEOUT);
         MailSendRemoteCommand remoteCommand = new MailSendRemoteCommand();
-        remoteCommand.setTitle("刚果商城邮箱验证码提醒")
+        remoteCommand.setTitle("DDD商城邮箱验证码提醒")
                 .setReceiver(requestParam.getReceiver())
                 .setSender(sender)
                 .setTemplateId(templateId)

@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.order.infrastructure.mq.provide;
 
 import com.alibaba.fastjson.JSON;

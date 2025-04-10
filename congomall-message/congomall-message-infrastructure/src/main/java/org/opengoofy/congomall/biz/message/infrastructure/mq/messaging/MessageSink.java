@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.message.infrastructure.mq.messaging;
 
 import org.springframework.cloud.stream.annotation.Input;
@@ -18,8 +16,6 @@ public interface MessageSink {
     
     /**
      * 邮箱发送
-     *
-     * @return
      */
     @Input(MessageSink.MAIL_SEND)
     SubscribableChannel mailSend();

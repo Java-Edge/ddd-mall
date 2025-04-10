@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.biz.message.infrastructure.algorithm;
 
 import cn.hutool.core.collection.CollUtil;

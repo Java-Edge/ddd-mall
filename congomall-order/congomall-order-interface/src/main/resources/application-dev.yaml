@@ -1,10 +1,8 @@
-
-
 spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.51.51.34:8848
+        server-addr: localhost:8848
     stream:
       rocketmq:
         binder:
@@ -18,7 +16,7 @@ spring:
       ds-0:
         username: root
         password: 123456
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/congomall_order?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true&useSSL=false
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/congomall-order?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true&useSSL=false
 
 mybatis-plus:
   configuration:

@@ -1,5 +1,3 @@
-
-
 package org.opengoofy.congomall.springboot.starter.log.config;
 
 import org.opengoofy.congomall.springboot.starter.log.annotation.MLog;

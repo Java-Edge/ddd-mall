@@ -1,5 +1,3 @@
-
-
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -8,9 +6,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
-      password: nacos
-      username: nacos
+        server-addr: 172.17.0.2:8848
+#      password: nacos
+#      username: nacos
     stream:
       rocketmq:
         binder:

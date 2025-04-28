@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.message.application.service;
 
 import org.opengoofy.congomall.biz.message.application.req.MessageSendQuery;

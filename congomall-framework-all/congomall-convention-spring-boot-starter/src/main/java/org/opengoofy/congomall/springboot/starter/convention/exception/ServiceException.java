@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.convention.exception;
 
 import org.opengoofy.congomall.springboot.starter.convention.errorcode.BaseErrorCode;

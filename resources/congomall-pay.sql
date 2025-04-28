@@ -1,3 +1,5 @@
+use congomall_pay;
+
 CREATE TABLE `pay_info`
 (
     `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

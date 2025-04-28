@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.minio;
 
 import org.opengoofy.congomall.springboot.starter.minio.config.MinioProperties;

@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.product.infrastructure.repository;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;

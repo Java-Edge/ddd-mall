@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.designpattern.config;
 
 import org.opengoofy.congomall.springboot.starter.base.config.ApplicationBaseAutoConfiguration;

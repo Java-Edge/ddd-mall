@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.bff.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;

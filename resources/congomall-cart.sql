@@ -1,3 +1,5 @@
+use congomall_cart;
+
 CREATE TABLE `cart_item_0`
 (
     `id`                bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

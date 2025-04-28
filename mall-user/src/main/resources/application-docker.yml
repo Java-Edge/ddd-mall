@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_ADDR}/mall_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: ${REDIS_ADDR}
+    port: 6379
+  rabbitmq:
+    host: ${RABBITMQ_ADDR}
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR}
+        namespace: public
+      config:
+        server-addr: ${NACOS_ADDR}
+        file-extension: yml

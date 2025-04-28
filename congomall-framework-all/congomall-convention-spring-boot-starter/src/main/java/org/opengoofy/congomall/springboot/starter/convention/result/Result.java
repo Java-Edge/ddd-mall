@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.convention.result;
 
 import lombok.Data;

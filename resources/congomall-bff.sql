@@ -1,3 +1,5 @@
+use congomall_bff;
+
 CREATE TABLE `donation`
 (
     `id`          bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

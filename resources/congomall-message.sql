@@ -1,3 +1,5 @@
+use congomall_message;
+
 CREATE TABLE `mail_template`
 (
     `id`             bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

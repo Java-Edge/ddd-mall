@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.message.web;
 
 import org.mybatis.spring.annotation.MapperScan;

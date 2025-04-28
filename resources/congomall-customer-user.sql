@@ -1,3 +1,5 @@
+use congomall_customer_user;
+
 CREATE TABLE `customer_user_0`
 (
     `id`             bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',

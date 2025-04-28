@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.order.infrastructure.mq.consumer;
 
 import lombok.RequiredArgsConstructor;

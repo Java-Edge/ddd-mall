@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.distributedid.core.snowflake;
 
 import cn.hutool.core.collection.CollUtil;

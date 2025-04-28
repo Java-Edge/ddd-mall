@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.idempotent.core.token;
 
 import cn.hutool.core.util.StrUtil;

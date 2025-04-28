@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.customer.user.infrastructure.remote;
 
 import org.opengoofy.congomall.biz.customer.user.infrastructure.remote.dto.MailSendRemoteCommand;

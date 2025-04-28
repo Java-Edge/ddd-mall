@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.message.infrastructure.mq.messaging;
 
 import org.springframework.cloud.stream.annotation.Input;

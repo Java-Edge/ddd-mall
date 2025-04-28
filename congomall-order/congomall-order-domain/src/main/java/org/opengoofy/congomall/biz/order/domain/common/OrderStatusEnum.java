@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.order.domain.common;
 
 import lombok.AllArgsConstructor;

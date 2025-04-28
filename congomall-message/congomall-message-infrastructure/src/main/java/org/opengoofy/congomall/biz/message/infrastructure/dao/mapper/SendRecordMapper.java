@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.biz.message.infrastructure.dao.mapper;
 
 import org.opengoofy.congomall.biz.message.infrastructure.dao.entity.SendRecordDO;

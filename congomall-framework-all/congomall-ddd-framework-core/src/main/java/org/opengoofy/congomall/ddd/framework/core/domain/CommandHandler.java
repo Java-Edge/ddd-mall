@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.ddd.framework.core.domain;
 
 /**

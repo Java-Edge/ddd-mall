@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.springboot.starter.base.init;
 
 import org.springframework.context.ApplicationEvent;

@@ -1,0 +1,179 @@
+version: '3.8'
+
+services:
+  # 基础设施服务
+  mysql:
+    image: mysql:8.0
+    container_name: mall-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mall
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./deploy/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mall-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:6.2
+    container_name: mall-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - mall-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: mall-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - mall-network
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  nacos:
+    image: nacos/nacos-server:v2.1.1
+    container_name: mall-nacos
+    environment:
+      MODE: standalone
+      SPRING_DATASOURCE_PLATFORM: mysql
+      MYSQL_SERVICE_HOST: mysql
+      MYSQL_SERVICE_PORT: 3306
+      MYSQL_SERVICE_USER: root
+      MYSQL_SERVICE_PASSWORD: root
+      MYSQL_SERVICE_DB_NAME: nacos
+    ports:
+      - "8848:8848"
+    depends_on:
+      - mysql
+    networks:
+      - mall-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8848/nacos"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 应用微服务
+  gateway-service:
+    build:
+      context: ./mall-gateway
+      dockerfile: Dockerfile
+    container_name: mall-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - NACOS_ADDR=nacos:8848
+    depends_on:
+      - nacos
+    networks:
+      - mall-network
+
+  user-service:
+    build:
+      context: ./mall-user
+      dockerfile: Dockerfile
+    container_name: mall-user
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - NACOS_ADDR=nacos:8848
+      - MYSQL_ADDR=mysql:3306
+      - REDIS_ADDR=redis:6379
+      - RABBITMQ_ADDR=rabbitmq:5672
+    depends_on:
+      - nacos
+      - mysql
+      - redis
+      - rabbitmq
+    networks:
+      - mall-network
+
+  product-service:
+    build:
+      context: ./mall-product
+      dockerfile: Dockerfile
+    container_name: mall-product
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - NACOS_ADDR=nacos:8848
+      - MYSQL_ADDR=mysql:3306
+      - REDIS_ADDR=redis:6379
+    depends_on:
+      - nacos
+      - mysql
+      - redis
+    networks:
+      - mall-network
+
+  order-service:
+    build:
+      context: ./mall-order
+      dockerfile: Dockerfile
+    container_name: mall-order
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - NACOS_ADDR=nacos:8848
+      - MYSQL_ADDR=mysql:3306
+      - RABBITMQ_ADDR=rabbitmq:5672
+      - REDIS_ADDR=redis:6379
+    depends_on:
+      - nacos
+      - mysql
+      - redis
+      - rabbitmq
+      - product-service
+      - user-service
+    networks:
+      - mall-network
+
+  payment-service:
+    build:
+      context: ./mall-payment
+      dockerfile: Dockerfile
+    container_name: mall-payment
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - NACOS_ADDR=nacos:8848
+      - MYSQL_ADDR=mysql:3306
+      - RABBITMQ_ADDR=rabbitmq:5672
+    depends_on:
+      - nacos
+      - mysql
+      - rabbitmq
+      - order-service
+    networks:
+      - mall-network
+
+networks:
+  mall-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  redis-data:
+  rabbitmq-data:

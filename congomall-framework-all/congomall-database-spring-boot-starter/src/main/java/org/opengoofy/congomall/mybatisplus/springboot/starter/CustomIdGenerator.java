@@ -1,3 +1,5 @@
+
+
 package org.opengoofy.congomall.mybatisplus.springboot.starter;
 
 import org.opengoofy.congomall.springboot.starter.distributedid.SnowflakeIdUtil;
